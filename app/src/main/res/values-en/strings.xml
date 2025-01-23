@@ -1,0 +1,59 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">GithubAndroidClient</string>
+
+    <!-- Menu -->
+    <string name="menu_home">Home</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_me">Me</string>
+
+    <!-- Search Language Fragment -->
+    <string name="fragment_kotlin">Kotlin</string>
+    <string name="fragment_Java">Java</string>
+    <string name="fragment_dart">Dart</string>
+    <string name="fragment_cpp">C++</string>
+    <string name="fragment_javascript">JavaScript</string>
+
+    <!-- Search Fragment -->
+    <string name="search_repo">Change to search user</string>
+    <string name="search_user">Change to search repository</string>
+
+    <string name="search_hint">Enter keywords to search</string>
+    <string name="search_repo_hint">Enter keywords to search repository</string>
+    <string name="search_user_hint">Enter keywords to search user</string>
+
+    <!-- Me Fragment -->
+    <string name="my_repos">Repositories</string>
+    <string name="my_following">Following</string>
+    <string name="my_followers">Followers</string>
+    <string name="settings">Settings</string>
+
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="personal_access_tokens">Personal Access Tokens</string>
+    <string name="login_tips">Login Github with Personal Access Tokens</string>
+    <string name="logging_in">Logging in...</string>
+    <string name="error_tips_token_empty">Personal Access Tokens can\'t be empty!</string>
+
+    <!-- Settings -->
+    <string name="logout">Log out</string>
+    <string name="confirm_logout">Confirm to log out？</string>
+    <string name="confirm">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_cache">Clear cache</string>
+    <string name="check_version">Check version</string>
+    <string name="already_latest_version">Already latest version</string>
+    <string name="current_version">Current version is %1$s</string>
+    <string name="confirm_clear_cache">Confirm to clear cache？</string>
+
+    <!-- Tips -->
+    <string name="press_again_to_exit">Please press again to quit</string>
+    <string name="network_not_available">Network is not available</string>
+    <string name="reload">Reload</string>
+    <string name="load_failed">Load failed, please click to retry</string>
+    <string name="load_end">No more</string>
+    <string name="load_complete">Load more</string>
+    <string name="loading">Loading &#8230;</string>
+    <string name="no_data">No data</string>
+    <string name="error_deny_permission">Please allow permissions in system settings, or you will be unable to use certain features</string>
+</resources>
