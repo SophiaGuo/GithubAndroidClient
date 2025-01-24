@@ -17,9 +17,9 @@ GithubAndroidClient is a native Github client application using Kotlin.
 
 #### APK
 
-The packaged apk is  [app-debug.apk](app/build/outputs/apk/debug/app-debug.apk) 
+The packaged apk is  [app-debug.apk](app/debug/app-debug.apk) 
 
-The path is located at  GithubAndroidClient/app/build/outputs/apk/debug/app-debug.apk
+The path is located at  GithubAndroidClient/app/debug/app-debug.apk
 
 (Due to insufficient time, signature should be used to package release package)
 
@@ -47,7 +47,12 @@ Clone the project
 git clone git@github.com:SophiaGuo/GithubAndroidClient.git
 ```
 
-After compilation, use the personal access token generated in the first step to log in when running
+Configure in local. properties
+```
+USER_ACCESS_TOKEN="XXXXXX"
+```
+Fill in with personal access token, compile and run.
+When logging in, use the personal login token generated in the first step, or click to log in with a test account.
 (A better solution is to register as a third-party app on GitHub and log in with an account and password, with a time limit of only using personal login tokens)
 
 
@@ -90,7 +95,7 @@ When there is a network error or no data available, the corresponding error mess
 
 <img src="https://upload-images.jianshu.io/upload_images/30388762-1c304aa3e6d928ce.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-ec3b743510e1cca3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" />
 
-## **Adaptation**
+## **Adaption**
 
 - Support minSdk>=29 devices **(Requirements)**
 - Support both portrait and landscape modes **(Requirements)**
@@ -159,11 +164,17 @@ BaseLoadMoreAdapter： Encapsulate and load more components
 
 #### Network
 
-Using Retrofit to define interfaces for convenience
+Using Retrofit to define interfaces for convenience.
 
 
 
 ## **Testing**
+
+The Android UI testing uses the Expresso testing framework, with the code path located at GithubAndroidClient/app/src/androidTest/java/com/Sophia/Githubandroidclient. It is used to test UI display, jumping, etc. In this project, it is used to test navigator jumping, fragment switching, activity jumping, etc.
+
+Unit testing uses JUnit, with the code path located at GithubAndroidClient/app/src/test/java/com/Sophia/gitubandroidclient, to test Kotlin logic. In this project, it is used to test whether the data pulled by repository using Retrofit is valid.
+
+Due to time constraints, the testing code is incomplete and for reference only.
 
 
 
@@ -190,20 +201,20 @@ This function displays the search results for the first viewport in Kotlin langu
 
 
 
-####Optimization
+#### Optimization
 
 This function executes lazy loading strategy in fragment onResume() and is modified to be executed by child threads
 
-<img src="https://upload-images.jianshu.io/upload_images/30388762-2200fcf827a0ef30.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/662" style="zoom: 50%;" /><img src="https://upload-images.jianshu.io/upload_images/30388762-ee97c945872fb343.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/676" style="zoom: 50%;" />
+<img src="https://upload-images.jianshu.io/upload_images/30388762-2200fcf827a0ef30.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/662" width="50%" /><img src="https://upload-images.jianshu.io/upload_images/30388762-ee97c945872fb343.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/676" width="50%" />
 
-#### 
+####
 
-####Result
+#### Result
 
 Starting no longer freezes the UI, but displays the UI and loading icon first, and then displays the search results after loading is complete. Cold start search page reduces time by about half (time and device limitations can only be tested on one's own testing machine)
 
 <img src="https://upload-images.jianshu.io/upload_images/30388762-efa5b8a2b7ab9dc6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" />
 
-#### 可优化
+#### To be optimized
 
-可以增加 SplashActivity 启动页，预加载耗时数据
+Add SplashActivity launch page, preloading time consumption data.

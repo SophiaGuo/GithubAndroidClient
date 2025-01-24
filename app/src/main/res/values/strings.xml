@@ -34,6 +34,8 @@
     <string name="login_tips">使用个人访问令牌登录 Github</string>
     <string name="logging_in">正在登录...</string>
     <string name="error_tips_token_empty">个人访问令牌不能为空</string>
+    <string name="login_test_account">使用测试账号登录</string>
+    <string name="error_tips_test_account_empty">没有配置测试账号，请把个人登录令牌配置到 local.properties 的 USER_ACCESS_TOKEN 中</string>
 
     <!-- Settings -->
     <string name="logout">退出登录</string>

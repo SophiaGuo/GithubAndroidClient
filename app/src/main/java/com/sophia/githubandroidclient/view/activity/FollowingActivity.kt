@@ -40,7 +40,10 @@ class FollowingActivity : BaseVmActivity<FollowingViewModel>() {
                 val followersEntity = it.data[position]
                 ActivityHelper.startActivity(
                     DetailActivity::class.java,
-                    mapOf(DetailActivity.PARAM_TITLE to followersEntity.login.toString(), DetailActivity.PARAM_URL to followersEntity.html_url.toString())
+                    mapOf(
+                        DetailActivity.PARAM_TITLE to followersEntity.login.toString(),
+                        DetailActivity.PARAM_URL to followersEntity.html_url.toString()
+                    )
                 )
             }
             binding.layoutList.recyclerView.adapter = it
@@ -52,9 +55,9 @@ class FollowingActivity : BaseVmActivity<FollowingViewModel>() {
             setColorSchemeResources(R.color.textColorPrimary)
             setProgressBackgroundColorSchemeResource(R.color.bgColorPrimary)
 
-                setOnRefreshListener {
-                    getData()
-                }
+            setOnRefreshListener {
+                getData()
+            }
         }
     }
 

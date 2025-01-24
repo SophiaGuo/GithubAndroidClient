@@ -34,6 +34,8 @@
     <string name="login_tips">Login Github with Personal Access Tokens</string>
     <string name="logging_in">Logging in...</string>
     <string name="error_tips_token_empty">Personal Access Tokens can\'t be empty!</string>
+    <string name="login_test_account">Use test account</string>
+    <string name="error_tips_test_account_empty">No test account, please add Personal Access Tokens to USER_ACCESS_TOKEN at local.properties</string>
 
     <!-- Settings -->
     <string name="logout">Log out</string>

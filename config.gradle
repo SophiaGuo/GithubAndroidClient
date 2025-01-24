@@ -1,7 +1,7 @@
 ext {
 
     android = [
-               compileSdkVersion       : 31,
+               compileSdkVersion       : 34,
                buildToolsVersion       : "30.0.3",
                minSdkVersion           : 29,
                targetSdkVersion        : 30,
@@ -41,7 +41,7 @@ ext {
                 "ext-junit"                : "androidx.test.ext:junit:1.1.2",
                 "espresso"                 : "com.android.support.test.espresso:espresso-core:3.6.1",
 
-                //协程
+                //coroutines
                 "kotlinx-coroutines-android"         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2",
 
                 //lifecycle
@@ -100,7 +100,7 @@ ext {
                 "glide"                     : "com.github.bumptech.glide:glide:${version["glideVersion"]}",
                 "glide-compiler"            : "com.github.bumptech.glide:compiler:${version["glideVersion"]}",
 
-//                //mockito
+                //mockito
                 "mockito-core"              : "org.mockito:mockito-core:${version["mockitoVersion"]}",
                 "mockito-inline"            : "org.mockito:mockito-inline:${version["mockitoVersion"]}",
 

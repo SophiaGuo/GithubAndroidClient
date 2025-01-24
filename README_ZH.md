@@ -5,7 +5,6 @@ GithubAndroidClient 是使用 Kotlin 实现的 Github 原生客户端。
 - 基于 MVVM 设计模式，使用协程处理并发请求
 - 网络请求使用 Retrofit 网络请求库
 - 声明式 UI，使用多个 JetPack 组件，如 ViewModel、LiveData、Navigator、TabLayout + ViewPager 等，UI 层使用 ViewBinding 进行绑定
-- 使用expresso测试框架
 
 
 
@@ -13,11 +12,11 @@ GithubAndroidClient 是使用 Kotlin 实现的 Github 原生客户端。
 
 #### APK
 
-打包好的 apk 为  [app-debug.apk](app/build/outputs/apk/debug/app-debug.apk) 
+打包好的 apk 为  [app-debug.apk](app/debug/app-debug.apk) 
 
-路径位于 GithubAndroidClient/app/build/outputs/apk/debug/app-debug.apk
+路径位于 GithubAndroidClient/app/debug/app-debug.apk
 
-（时间关系，应该使用签名打包 release 包）
+（时间关系，应该使用签名生成 release 包）
 
 
 
@@ -45,7 +44,15 @@ https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/m
 git clone git@github.com:SophiaGuo/GithubAndroidClient.git
 ```
 
-编译后运行，需要登录时使用第一步生成的个人登录令牌进行登录
+在 local.properties 中配置
+
+```
+USER_ACCESS_TOKEN="XXXXXX"
+```
+
+填入个人登录令牌，编译后运行
+
+需要登录时使用第一步生成的个人登录令牌进行登录，或点击使用测试账号登录
 
 （更好解决方法，注册为 github 第三方 app 使用账号密码登录，时间限制只使用个人登录令牌）
 
@@ -65,13 +72,13 @@ git clone git@github.com:SophiaGuo/GithubAndroidClient.git
 
 **我的页**：显示个人账号页，可查看仓库，关注者，关注的人，设置***（要求点）***
 
-<img src="https://upload-images.jianshu.io/upload_images/30388762-acf96f8933b8d94c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-6818094c5cfdef22.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-04bbdc8a4f375e21.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" />
+<img src="https://upload-images.jianshu.io/upload_images/30388762-acf96f8933b8d94c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-6818094c5cfdef22.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-04bbdc8a4f375e21.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" />
 
 
 
 搜索
 
-<img src="https://upload-images.jianshu.io/upload_images/30388762-bf04258bc5a01bb7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-5c81fc7f8c3d1545.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" />
+<img src="https://upload-images.jianshu.io/upload_images/30388762-bf04258bc5a01bb7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-5c81fc7f8c3d1545.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" />
 
 
 
@@ -79,7 +86,7 @@ git clone git@github.com:SophiaGuo/GithubAndroidClient.git
 
 在我的页提供登录模块，可进入我的仓库/关注者/关注的人页，若未登录，会跳转登录页，并提供退出登录，清理缓存功能***（额外点）***，登录状态会保存在本地，下次启动 app 依然保留***（要求点）***
 
-<img src="https://upload-images.jianshu.io/upload_images/30388762-914abee5c3545733.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-5b3c6f2fd90a29e2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-373dc84dca9315f5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" />
+<img src="https://upload-images.jianshu.io/upload_images/30388762-914abee5c3545733.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-5b3c6f2fd90a29e2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-373dc84dca9315f5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" />
 
 
 
@@ -87,7 +94,7 @@ git clone git@github.com:SophiaGuo/GithubAndroidClient.git
 
 当网络错误、没有数据时，会显示对应的错误提示***（要求点）***
 
-<img src="https://upload-images.jianshu.io/upload_images/30388762-1c304aa3e6d928ce.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-ec3b743510e1cca3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" />
+<img src="https://upload-images.jianshu.io/upload_images/30388762-1c304aa3e6d928ce.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-ec3b743510e1cca3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" />
 
 
 
@@ -114,7 +121,7 @@ private val requestPermissionLauncher =
 - 支持中英文语言切换，可随系统语言设置切换中英文***（额外点）***
 - 支持暗黑模式，可在系统设置暗黑模式体验***（额外点）***
 
-<img src="https://upload-images.jianshu.io/upload_images/30388762-7485f00f2333c768.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-f34a05e02f8ae023.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-127d1284ac1e8fc6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" />
+<img src="https://upload-images.jianshu.io/upload_images/30388762-7485f00f2333c768.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-f34a05e02f8ae023.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" /> <img src="https://upload-images.jianshu.io/upload_images/30388762-127d1284ac1e8fc6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" />
 
 
 
@@ -168,11 +175,17 @@ BaseLoadMoreAdapter：封装加载更多组件
 
 #### 网络请求
 
-使用 Retrofit 定义接口，方便快捷
+使用 Retrofit 定义接口，方便快捷。
 
 
 
 ## **测试**
+
+Android UI 测试使用 expresso 测试框架，代码路径位于GithubAndroidClient/app/src/androidTest/java/com/sophia/githubandroidclient 下，用于测试 UI 显示、跳转等，项目中用于测试 navigator 跳转、fragment 切换、activity 跳转等。
+
+单元测试使用 JUnit，代码路径位于 GithubAndroidClient/app/src/test/java/com/sophia/githubandroidclient 下，用于测试 Kotlin 逻辑，项目中主要用于测试 repository 使用 Retrofit 拉取的数据是否有效。
+
+时间关系，测试代码不完善，仅供参考。
 
 
 
@@ -202,20 +215,20 @@ BaseLoadMoreAdapter：封装加载更多组件
 
 #### 优化
 
-该函数在 fragment onResume() 中执行懒加载策略，修改为子线程执行
+该函数在 fragment onResume() 中执行懒加载策略，修改为子线程执行。
 
-<img src="https://upload-images.jianshu.io/upload_images/30388762-2200fcf827a0ef30.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/662" style="zoom: 50%;" /><img src="https://upload-images.jianshu.io/upload_images/30388762-ee97c945872fb343.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/676" style="zoom: 50%;" />
+<img src="https://upload-images.jianshu.io/upload_images/30388762-2200fcf827a0ef30.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/662" width="50%" /><img src="https://upload-images.jianshu.io/upload_images/30388762-ee97c945872fb343.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/676" width="50%"/>
 
 
 
 #### 结果
 
-启动不再卡住 UI，而是先展示 UI 和 loading 图标，等加载完成再显示搜索结果。冷启动搜索页减少约一半时间（时间和设备限制只能在自己的测试机上测试得到的数据）
+启动不再卡住 UI，而是先展示 UI 和 loading 图标，等加载完成再显示搜索结果。冷启动搜索页减少约一半时间（时间和设备限制只能在自己的测试机上测试得到的数据）。
 
-<img src="https://upload-images.jianshu.io/upload_images/30388762-efa5b8a2b7ab9dc6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" style="zoom:25%;" />
+<img src="https://upload-images.jianshu.io/upload_images/30388762-efa5b8a2b7ab9dc6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" width="25%" />
 
 
 
 #### 可优化
 
-可以增加 SplashActivity 启动页，预加载耗时数据
+可以增加 SplashActivity 启动页，预加载耗时数据。

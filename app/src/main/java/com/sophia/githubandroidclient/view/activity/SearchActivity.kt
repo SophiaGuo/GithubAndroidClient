@@ -19,8 +19,6 @@ import com.sophia.githubandroidclient.view.fragment.SearchResultFragment
  */
 class SearchActivity : BaseActivity() {
 
-
-
     private lateinit var binding: ActivitySearchBinding
 
     private var mType: String = SEARCH_PARAM_TYPE_REPO

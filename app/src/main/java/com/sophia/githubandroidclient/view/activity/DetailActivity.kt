@@ -113,7 +113,7 @@ class DetailActivity : BaseVmActivity<DetailViewModel>() {
     }
 
     /**
-     * 设置标题
+     * Set title
      */
     private fun setDetailTitle(title: CharSequence?, isSelected: Boolean = false) {
         binding.textTitle.text = title

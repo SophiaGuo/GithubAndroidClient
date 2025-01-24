@@ -2,6 +2,7 @@ package com.sophia.githubandroidclient.view.activity
 
 import android.os.Bundle
 import android.widget.Toast
+import com.sophia.githubandroidclient.BuildConfig
 import com.sophia.githubandroidclient.R
 import com.sophia.githubandroidclient.view.baseview.BaseVmActivity
 import com.sophia.githubandroidclient.databinding.ActivityLoginBinding
@@ -30,6 +31,14 @@ class LoginActivity : BaseVmActivity<LoginViewModel>() {
             val token = binding.edittextToken.text.toString()
             when {
                 token.isEmpty() -> Toast.makeText(this, getString(R.string.error_tips_token_empty), Toast.LENGTH_SHORT)
+                else -> mViewModel.login(token)
+            }
+        }
+
+        binding.buttonLoginTestAccount?.setOnClickListener {
+            val token = BuildConfig.USER_ACCESS_TOKEN
+            when {
+                token == null || token.isEmpty() -> Toast.makeText(this, getString(R.string.error_tips_token_empty), Toast.LENGTH_SHORT)
                 else -> mViewModel.login(token)
             }
         }

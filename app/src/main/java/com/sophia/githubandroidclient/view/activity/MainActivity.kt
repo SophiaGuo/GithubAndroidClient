@@ -25,7 +25,6 @@ class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-
     private lateinit var fragments: Map<Int, BaseFragment>
     private var lastClickBackButtonTime = 0L
 
@@ -66,7 +65,7 @@ class MainActivity : BaseActivity() {
     private val requestPermissionLauncher =
         registerForActivityResult(
             ActivityResultContracts.RequestPermission()
-        ) { isGranted: Boolean,  ->
+        ) { isGranted: Boolean ->
             if (isGranted) {
                 Log.i(tag, "Permission Granted")
             } else {
@@ -77,7 +76,8 @@ class MainActivity : BaseActivity() {
 
 
     private fun createFragment(clazz: Class<out Fragment>): BaseFragment {
-        var fragment = supportFragmentManager.fragments.find { it.javaClass == clazz } as BaseFragment?
+        var fragment =
+            supportFragmentManager.fragments.find { it.javaClass == clazz } as BaseFragment?
         if (fragment == null) {
             fragment = when (clazz) {
                 HomeFragment::class.java -> HomeFragment.newInstance()
@@ -97,7 +97,7 @@ class MainActivity : BaseActivity() {
         supportFragmentManager.beginTransaction().apply {
             currentFragment?.let { if (it.isVisible) hide(it) }
             targetFragment?.let {
-                if (it.isAdded) show(it) else add(R.id.layout, it)
+                if (it.isAdded) show(it) else add(R.id.fragment_layout, it)
             }
         }.commit()
     }
@@ -105,7 +105,7 @@ class MainActivity : BaseActivity() {
     // Press back button two times to quit
     override fun onBackPressed() {
         for (fragment in fragments.values) {
-            if(fragment.handleBackPressed())
+            if (fragment.handleBackPressed())
                 return
         }
         val currentTime = System.currentTimeMillis()
